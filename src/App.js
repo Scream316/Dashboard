@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import GameDashboard from './GameDashboard.js';
-import WeeklyCalendar from './WeeklyCalendar';
+
 // Komponenta Clock – hodiny a datum
 function Clock() {
   const [now, setNow] = React.useState(new Date());
@@ -15,41 +14,33 @@ function Clock() {
   const time = now.toLocaleTimeString();
 
   return (
-    <div style={{ 
-      position: 'absolute',
-      top: 10,
-      right: 22,
-      color: 'white', 
-      fontSize: '1.7rem', 
-      textAlign: 'right',
-      backgroundColor: 'rgba(0, 0, 0, 0.3)',
-      padding: '0.5rem 1rem',
-      borderRadius: '8px',
-      userSelect: 'none',
-      fontWeight: 'bold',
-      minWidth: 120,
-      zIndex: 10,
-    }}>
-      <div>{day}, {date}</div>
+    <div
+      style={{
+        position: 'absolute',
+        top: 10,
+        right: 22,
+        color: 'white',
+        fontSize: '1.7rem',
+        textAlign: 'right',
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        padding: '0.5rem 1rem',
+        borderRadius: '8px',
+        userSelect: 'none',
+        fontWeight: 'bold',
+        minWidth: 120,
+        zIndex: 10,
+      }}
+    >
+      <div>
+        {day}, {date}
+      </div>
       <div style={{ fontSize: '2rem' }}>{time}</div>
     </div>
   );
 }
 
-// Komponenta jednoho odkazu s favicon
-function LinkItem({ url, title }) {
-  const domain = (() => {
-    try {
-      return new URL(url).hostname;
-    } catch {
-      return null;
-    }
-  })();
-
-  const faviconUrl = domain
-    ? `https://www.google.com/s2/favicons?domain=${domain}&sz=32`
-    : null;
-
+// Komponenta jednoho odkazu s favicon, zobrazí jen pokud faviconUrl je zadán
+function LinkItem({ url, title, faviconUrl }) {
   return (
     <a
       href={url}
@@ -101,14 +92,16 @@ function LinkItem({ url, title }) {
           }}
         />
       )}
-      <span style={{
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        display: 'inline-block',
-        maxWidth: 'calc(100% - 28px)',
-        verticalAlign: 'middle',
-      }}>
+      <span
+        style={{
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          display: 'inline-block',
+          maxWidth: 'calc(100% - 28px)',
+          verticalAlign: 'middle',
+        }}
+      >
         {title}
       </span>
     </a>
@@ -118,20 +111,22 @@ function LinkItem({ url, title }) {
 // Komponenta kategorie s rozbalováním
 function CategorySection({ title, links, isOpen, onToggle }) {
   return (
-    <section style={{ 
-      padding: '1rem', 
-      border: '1px solid #7a4f24',      
-      borderRadius: '8px', 
-      backgroundColor: '#4b3221',
-      boxSizing: 'border-box',
-      width: '100%',
-      userSelect: 'none',
-    }}>
-      <h2 
-        onClick={onToggle} 
-        style={{ 
-          color: '#d9b382',                
-          borderBottom: '1px solid #7a4f24', 
+    <section
+      style={{
+        padding: '1rem',
+        border: '1px solid #7a4f24',
+        borderRadius: '8px',
+        backgroundColor: '#4b3221',
+        boxSizing: 'border-box',
+        width: '100%',
+        userSelect: 'none',
+      }}
+    >
+      <h2
+        onClick={onToggle}
+        style={{
+          color: '#d9b382',
+          borderBottom: '1px solid #7a4f24',
           marginBottom: isOpen ? '1rem' : '0',
           textAlign: 'center',
           cursor: 'pointer',
@@ -145,19 +140,21 @@ function CategorySection({ title, links, isOpen, onToggle }) {
         aria-controls={`${title}-links`}
       >
         {title}
-        <span style={{
-          display: 'inline-block',
-          transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)',
-          transition: 'transform 0.3s ease',
-          fontWeight: 'bold',
-          fontSize: '1.2rem',
-          userSelect: 'none',
-          letterSpacing: '0.1rem',
-        }}>
+        <span
+          style={{
+            display: 'inline-block',
+            transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)',
+            transition: 'transform 0.3s ease',
+            fontWeight: 'bold',
+            fontSize: '1.2rem',
+            userSelect: 'none',
+            letterSpacing: '0.1rem',
+          }}
+        >
           ▶
         </span>
       </h2>
-      
+
       <nav
         id={`${title}-links`}
         style={{
@@ -165,8 +162,8 @@ function CategorySection({ title, links, isOpen, onToggle }) {
           marginTop: '0.5rem',
         }}
       >
-        {links.map(({ url, title }, i) => (
-          <LinkItem key={i} url={url} title={title} />
+        {links.map(({ url, title, faviconUrl }, i) => (
+          <LinkItem key={i} url={url} title={title} faviconUrl={faviconUrl} />
         ))}
       </nav>
     </section>
@@ -177,11 +174,7 @@ function CategorySection({ title, links, isOpen, onToggle }) {
 function HeroImage({ src, alt, children }) {
   return (
     <div style={{ width: '100%', height: 900, overflow: 'hidden', marginBottom: '1rem' }}>
-      <img 
-        src={src}
-        alt={alt}
-        style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-      />
+      <img src={src} alt={alt} style={{ width: '100%', height: 'auto', objectFit: 'cover' }} />
       {children}
     </div>
   );
@@ -197,125 +190,120 @@ function App() {
     {
       title: "Kancelář",
       links: [
-        { url: "https://gmail.com", title: "Gmail" },
-        { url: "https://calendar.google.com", title: "Google Kalendář" },
-        { url: "https://email.faster.cz/", title: "Faster email" },
-        { url: "https://calendar.google.com", title: "Google Kalendář" },
-        { url: "https://mail.proton.me/u/0/inbox?welcome=true", title: "Proton email" },
-        { url: "https://drive.google.com/drive/my-drive", title: "Google disk" },
-        { url: "https://www.brnoid.cz/cs/", title: "BrnoID" },
-        { url: "https://pidlitacka.cz/cs/login", title: "Lítačka" },
-        { url: "http://mojeid.cz/auction/password/", title: "MojeID" },
-        { url: "http://192.168.31.193:3030/#/timesheet/list", title: "Traggo" },
-        { url: "http://192.168.31.190:8080/", title: "Stirling PDF" },
-        { url: "https://www.mojedatovaschranka.cz/as/login?uri=https%3a%2f%2fwww.mojedatovaschranka.cz%2fportal%2fISDS%2f&status=NCOO", title: "Datové schránky" },
+        { url: "https://gmail.com", title: "Gmail", faviconUrl: "/icons/gmail.png" },
+        { url: "https://calendar.google.com", title: "Google Kalendář", faviconUrl: "/icons/calendar.png" },
+        { url: "https://email.faster.cz/", title: "Faster email", faviconUrl: "/icons/fastermail.png" },
+        { url: "https://mail.proton.me/u/0/inbox?welcome=true", title: "Proton email", faviconUrl: "/icons/protonmail.jpeg" }, // lokální ikona
+        { url: "https://drive.google.com/drive/my-drive", title: "Google disk", faviconUrl: "/icons/googledisk.png" },
+        { url: "https://www.brnoid.cz/cs/", title: "BrnoID", faviconUrl: "/icons/brnoid.png" },
+        { url: "https://pidlitacka.cz/cs/login", title: "Lítačka", faviconUrl: "/icons/litacka.png" },
+        { url: "http://mojeid.cz/auction/password/", title: "MojeID", faviconUrl: "/icons/mojeid.png" },
       ],
     },
     {
       title: "Zábava",
       links: [
-        { url: "https://www.youtube.com/", title: "Youtube" },
-        { url: "https://www.metacritic.com/", title: "Metacritic" },
-        { url: "https://store.playstation.com/en-cz/pages/latest", title: "Playstation" },
-        { url: "https://www.nintendo.com/us/", title: "Nintendo" },
-        { url: "https://www.bungie.net/7/", title: "Bungie" },
-        { url: "https://store.steampowered.com/", title: "Steam" },
-        { url: "https://floor796.com/#t2l4,59,946", title: "Flor796" },
-        { url: "https://eu.shop.battle.net/en-us#optLogin=true", title: "Blizzard" },
-        { url: "https://store.epicgames.com/en-US/", title: "Epic" },
-        { url: "https://www.gog.com/en/", title: "GoG" },
-        { url: "https://discord.com/channels/@me", title: "Discord" },
-        { url: "https://www.riotgames.com/en", title: "Riot" },
+        { url: "https://www.youtube.com/", title: "Youtube", faviconUrl: "/icons/youtube.png" },
+        { url: "https://www.metacritic.com/", title: "Metacritic", faviconUrl: "/icons/metacritic.png" },
+        { url: "https://store.playstation.com/en-cz/pages/latest", title: "Playstation", faviconUrl: "/icons/playstation.png" },
+        { url: "https://www.nintendo.com/us/", title: "Nintendo", faviconUrl: "/icons/nintendo.png" },
+        { url: "https://www.bungie.net/7/", title: "Bungie", faviconUrl: "/icons/bungie.png.png" },
+        { url: "https://store.steampowered.com/", title: "Steam", faviconUrl: "/icons/steam.png" },
+        { url: "https://floor796.com/#t2l4,59,946", title: "Flor796", faviconUrl: "/icons/floor796.png.png" },
+        { url: "https://eu.shop.battle.net/en-us#optLogin=true", title: "Blizzard" , faviconUrl: "/icons/battlenet.png"},
+        { url: "https://store.epicgames.com/en-US/", title: "Epic", faviconUrl: "/icons/epic.png" },
+        { url: "https://www.gog.com/en/", title: "GoG", faviconUrl: "/icons/gog.jpeg" },
+        { url: "https://discord.com/channels/@me", title: "Discord", faviconUrl: "/icons/discord.png" },
+        { url: "https://www.riotgames.com/en", title: "Riot", faviconUrl: "/icons/riot.png" },
         { url: "https://docs.google.com/spreadsheets/d/1iU4dVup75JY8997a-LNJ2J-xOkXG7dTn5qDCDBt9mZw/edit?gid=0#gid=0", title: "Seznam her" },
-        { url: "https://www.twitch.tv/?no-reload=true", title: "Twitch" },
-        { url: "https://www.ubisoft.com/en-us", title: "Ubisoft" },
-        { url: "https://www.xbox.com/cs-CZ", title: "Xbox" },
-        { url: "https://pocketpsn.com/Screamm316", title: "Pocket PSN" },
+        { url: "https://www.twitch.tv/?no-reload=true", title: "Twitch", faviconUrl: "/icons/twitch.png" },
+        { url: "https://www.ubisoft.com/en-us", title: "Ubisoft", faviconUrl: "/icons/ubisoft.png" },
+        { url: "https://www.xbox.com/cs-CZ", title: "Xbox", faviconUrl: "/icons/xbox.png" },
+        { url: "https://pocketpsn.com/Screamm316", title: "Pocket PSN", faviconUrl: "/icons/pocketpsn.png" },
       ],
     },
     {
       title: "Knihy",
       links: [
         { url: "https://www.knihydobrovsky.cz/", title: "Dobrovský" },
-        { url: "https://calendar.google.com", title: "Knihobot" },
-        { url: "https://www.goodreads.com/", title: "Goodreads" },
-        { url: "https://www.databazeknih.cz/", title: "Databáze knih" },
-        { url: "https://katalog.kjm.cz/arl-kjm/cs/index/", title: "Mahenova knihovna" },
-        { url: "https://www.trhknih.cz/", title: "Trh knih" },
-        { url: "http://192.168.31.195:5000/login", title: "Kavita" },
+        { url: "https://knihobot.cz/", title: "Knihobot", faviconUrl: "/icons/knihobot.png" },
+        { url: "https://www.goodreads.com/", title: "Goodreads", faviconUrl: "/icons/goodreads.png" },
+        { url: "https://www.databazeknih.cz/", title: "Databáze knih", faviconUrl: "/icons/databazeknih.png" },
+        { url: "https://katalog.kjm.cz/arl-kjm/cs/index/", title: "Mahenova knihovna", faviconUrl: "/icons/mahenka.png" },
+        { url: "https://www.trhknih.cz/", title: "Trh knih", faviconUrl: "/icons/trhknih.png" },
+        { url: "http://192.168.31.195:5000/login", title: "Kavita", faviconUrl: "/icons/kavita.png" },
       ],
     },
     {
       title: "Money",
       links: [
-        { url: "https://login.kb.cz/login?sso=IB_RETAIL_OAUTH_PRXY&layout=BRAND", title: "Komerční banka" },
-        { url: "https://bezpecnost.csas.cz/wlogin/?app_id=GEORGE", title: "Česká spořitelna" },
-        { url: "https://ib.airbank.cz/", title: "Air bank" },
+        { url: "https://login.kb.cz/login?sso=IB_RETAIL_OAUTH_PRXY&layout=BRAND", title: "Komerční banka", faviconUrl: "/icons/kb.png" },
+        { url: "https://bezpecnost.csas.cz/wlogin/?app_id=GEORGE", title: "Česká spořitelna", faviconUrl: "/icons/csas.png" },
+        { url: "https://ib.airbank.cz/", title: "Air bank", faviconUrl: "/icons/airbank.png" },
         { url: "https://docs.google.com/spreadsheets/d/1WeVX_QK7r1vaIrkpn0gwQgIMYH5P5xUvr0r1WnsZk-g/edit?gid=256684917#gid=256684917", title: "Splátky k úhradě" },
-        { url: "https://adisspr.mfcr.cz/pmd/home/prihlaseni-do-dis", title: "Moje daně" },
-        { url: "https://obcan.portal.gov.cz/prihlaseni", title: "Portál občana" },
-        { url: "https://moje.allianz.cz/online-moa/cs/login/auth", title: "Moje Alianz" },
-        { url: "http://mojeid.cz/auction/password/", title: "Zdravotní pojišťovna" },
-        { url: "http://192.168.31.194:8093/login", title: "Firefly III" },
-        { url: "http://192.168.31.192:8080/dashboard", title: "Invoice Ninja" },
+        { url: "https://adisspr.mfcr.cz/pmd/home/prihlaseni-do-dis", title: "Moje daně", faviconUrl: "/icons/mojedane.png" },
+        { url: "https://obcan.portal.gov.cz/prihlaseni", title: "Portál občana", faviconUrl: "/icons/portalobcana.png" },
+        { url: "https://moje.allianz.cz/online-moa/cs/login/auth", title: "Moje Alianz", faviconUrl: "/icons/allianz.png" },
+        { url: "http://192.168.31.194:8093/login", title: "Firefly III", faviconUrl: "/icons/firefly.jpeg" },
+        { url: "http://192.168.31.192:8080/dashboard", title: "Invoice Ninja", faviconUrl: "/icons/invoiceninja.png" },
         { url: "https://docs.google.com/spreadsheets/d/1qAnssfHsxB1HHpp-lnZtq73sGAO6AklBCZHHBW5S7ZI/edit?gid=0#gid=0", title: "Splátka notebook" },
       ],
     },
     {
       title: "Nákupy",
       links: [
-        { url: "https://www.aliexpress.com/?spm=a2g0o.order_list.logo.1.6b4d1802hMVVDo", title: "Aliexpress" },
-        { url: "https://www.ikea.com/cz/cs/", title: "Ikea" },
-        { url: "https://www.xzone.cz/", title: "Xzone" },
-        { url: "https://www.dekudeals.com/games", title: "Deku Deals" },
-        { url: "https://www.smarty.cz/", title: "Smarty" },
-        { url: "https://www.alza.cz/", title: "Alza" },
+        { url: "https://www.aliexpress.com/?spm=a2g0o.order_list.logo.1.6b4d1802hMVVDo", title: "Aliexpress", faviconUrl: "/icons/aliexpress.png" },
+        { url: "https://www.ikea.com/cz/cs/", title: "Ikea", faviconUrl: "/icons/ikea.png" },
+        { url: "https://www.xzone.cz/", title: "Xzone", faviconUrl: "/icons/xzone.png" },
+        { url: "https://www.dekudeals.com/games", title: "Deku Deals", faviconUrl: "/icons/dekudeals.png" },
+        { url: "https://www.smarty.cz/", title: "Smarty", faviconUrl: "/icons/smarty.png" },
+        { url: "https://www.alza.cz/", title: "Alza", faviconUrl: "/icons/alza.png" },
       ],
     },
     {
       title: "Monitoring",
       links: [
-        { url: "http://192.168.31.189:3000/?orgId=1&from=now-6h&to=now&timezone=browser", title: "Grafana" },
-        { url: "http://192.168.31.189:3001/dashboard", title: "Uptime Kuma" },
+        { url: "http://192.168.31.189:3000/?orgId=1&from=now-6h&to=now&timezone=browser", title: "Grafana", faviconUrl: "/icons/grafana.png" },
+        { url: "http://192.168.31.189:3001/dashboard", title: "Uptime Kuma", faviconUrl: "/icons/kuma.jpeg" },
       ],
     },
     {
       title: "Streaming",
       links: [
-        { url: "https://www.netflix.com/browse", title: "Netflix" },
-        { url: "https://www.crunchyroll.com/", title: "Crunchyroll" },
-        { url: "https://www.kinobox.cz/", title: "Kinobox" },
-        { url: "https://www.themoviedb.org/", title: "The movie Database" },
-        { url: "https://www.disneyplus.com/cs-cz/select-profile", title: "Disney+" },
-        { url: "https://www.oneplay.cz/", title: "Oneplay" },
-        { url: "https://myanimelist.net/", title: "My Anime list" },
-        { url: "https://www.imdb.com/", title: "Imdb" },
+        { url: "https://www.netflix.com/browse", title: "Netflix", faviconUrl: "/icons/netflix.png" },
+        { url: "https://www.crunchyroll.com/", title: "Crunchyroll", faviconUrl: "/icons/crunchyroll.png" },
+        { url: "https://www.kinobox.cz/", title: "Kinobox", faviconUrl: "/icons/kinobox.png" },
+        { url: "https://www.themoviedb.org/", title: "The movie Database", faviconUrl: "/icons/tmdb.png" },
+        { url: "https://www.disneyplus.com/cs-cz/select-profile", title: "Disney+", faviconUrl: "/icons/disney.png" },
+        { url: "https://www.oneplay.cz/", title: "Oneplay", faviconUrl: "/icons/oneplay.jpeg"},
+        { url: "https://myanimelist.net/", title: "My Anime list", faviconUrl: "/icons/mal.png" },
+        { url: "https://www.imdb.com/", title: "Imdb", faviconUrl: "/icons/imdb.png" },
       ],
     },
     {
       title: "Tvorba",
       links: [
-        { url: "https://www.figma.com/files/team/927309606831785081/recents-and-sharing?fuid=927309597157056889", title: "Figma" },
-        { url: "https://www.photopea.com/", title: "Photopea" },
-        { url: "https://projects.raspberrypi.org/en", title: "Raspberry projekty" },
-        { url: "https://screely.com/", title: "Screely" },
-        { url: "https://scribehow.com/", title: "Scribe" },
-        { url: "https://www.canva.com/", title: "Canva" },
+        { url: "https://www.figma.com/files/team/927309606831785081/recents-and-sharing?fuid=927309597157056889", title: "Figma", faviconUrl: "/icons/figma.png" },
+        { url: "https://www.photopea.com/", title: "Photopea", faviconUrl: "/icons/photophea.png" },
+        { url: "https://projects.raspberrypi.org/en", title: "Raspberry projekty", faviconUrl: "/icons/raspberry.png" },
+        { url: "https://screely.com/", title: "Screely", faviconUrl: "/icons/screely.png" },
+        { url: "https://scribehow.com/", title: "Scribe", faviconUrl: "/icons/scribe.png" },
+        { url: "https://www.canva.com/", title: "Canva", faviconUrl: "/icons/canva.png" },
       ],
     },
     {
       title: "Ostatní",
       links: [
-        { url: "https://www.notion.so/HQ-f653bbbbfc114869b815c917ead7ef85", title: "HQ" },
-        { url: "https://www.perplexity.ai/", title: "Perplexity" },
-        { url: "https://projects.raspberrypi.org/en", title: "Git hub"},
-        { url: "https://work-nx63121.slack.com/?redir=%2Faccount%2Fworkspace-settings#admins", title: "Slack Admin" },
-        { url: "https://www.nirsoft.net/?utm_source=substack&utm_medium=email", title: "NirSoft" },
-        { url: "https://app.netlify.com/projects/scream316-fight-game/domain-management", title: "Netlify" },
-        { url: "https://www.credly.com/users/pavel-snabl/edit#credly", title: "Creedly" },
-        { url: "https://webshare.cz/#/search", title: "Webshare" },
+        { url: "https://www.notion.so/HQ-f653bbbbfc114869b815c917ead7ef85", title: "HQ", faviconUrl: "/icons/hq.png" },
+        { url: "https://www.perplexity.ai/", title: "Perplexity", faviconUrl: "/icons/perplexity.png" },
+        { url: "https://work-nx63121.slack.com/?redir=%2Faccount%2Fworkspace-settings#admins", title: "Slack Admin", faviconUrl:"/icons/slack.png" },
+        { url: "https://www.nirsoft.net/?utm_source=substack&utm_medium=email", title: "NirSoft", faviconUrl: "/icons/nirsoft.png" },
+        { url: "https://app.netlify.com/projects/scream316-fight-game/domain-management", title: "Netlify", faviconUrl: "/icons/netlify.png"},
+        { url: "https://www.credly.com/users/pavel-snabl/edit#credly", title: "Creedly", faviconUrl: "/icons/credly.png" },
+        { url: "https://webshare.cz/#/search", title: "Webshare", faviconUrl: "/icons/webshare.png" },
+        { url: "https://webutility.io/favicon-extractor", title: "Favicon", faviconUrl: "/icons/favicon.png" },
       ],
-    }
+    },
   ];
 
   // Filtrování dat podle searchTerm
@@ -324,27 +312,23 @@ function App() {
     : linksData
         .map(cat => ({
           ...cat,
-          links: cat.links.filter(link => 
+          links: cat.links.filter(link =>
             link.title.toLowerCase().includes(searchTerm.toLowerCase())
-          )
+          ),
         }))
         .filter(cat => cat.links.length > 0);
 
   // Synchronizace rozbalení kategorií podle searchTerm
   useEffect(() => {
     if (searchTerm.trim() === '') {
-      // Vrátit stav otevřených kategorií do původního stavu (uloženého v savedOpenCategories)
       setOpenCategories(new Set(savedOpenCategories));
     } else {
-      // Uložíme původní rozbalené kategorie pokud ještě nejsou uloženy
       if (savedOpenCategories.size === 0) {
         setSavedOpenCategories(new Set(openCategories));
       }
-      // Rozbalíme všechny odpovídající kategorie vyhledávání
       const newOpen = new Set(filteredLinksData.map(cat => cat.title));
       setOpenCategories(newOpen);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm]);
 
   // Přepnutí otevření/sbalení kategorie
@@ -361,58 +345,41 @@ function App() {
   };
 
   return (
-    <div style={{ 
-      backgroundColor: '#2e1a0f', 
-      minHeight: '100vh', 
-      padding: '1rem 2rem', 
-      fontFamily: "'Mystery Quest', cursive, bold",
-      color: '#f3e9d2',   
-    }}>
-      <HeroImage src="/images/hero.jpg" alt="Hero Image">
+    <div
+      style={{
+        backgroundColor: '#2e1a0f',
+        minHeight: '100vh',
+        padding: '1rem 2rem',
+        fontFamily: "'Mystery Quest', cursive, bold",
+        color: '#f3e9d2',
+      }}
+    >
+      <HeroImage src={`${process.env.PUBLIC_URL}/images/hero.jpg`} alt="Hero Image">
         <Clock />
       </HeroImage>
 
-      <GameDashboard />
-
-      <WeeklyCalendar />
-      <div style={{ marginTop: '1rem', marginBottom: '1rem', textAlign: 'center' }}>
-        <input
-          type="text"
-          placeholder="Hledat odkazy..."
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-          style={{
-            width: '100%',
-            maxWidth: 400,
-            padding: '0.5rem 1rem',
-            fontSize: '1.1rem',
-            borderRadius: '8px',
-            border: '1px solid #7a4f24',
-            backgroundColor: '#4b3221',
-            color: '#f3e9d2',
-            outline: 'none',
-          }}
-        />
-      </div>
-      
-      <main style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '1.5rem',
-        marginTop: '1rem',
-        width: '100%',
-        boxSizing: 'border-box',
-        alignItems: 'start',
-      }}>
-        {filteredLinksData.length > 0 ? filteredLinksData.map(cat => (
-          <CategorySection
-            key={cat.title}
-            title={cat.title}
-            links={cat.links}
-            isOpen={openCategories.has(cat.title)}
-            onToggle={() => toggleCategoryOpen(cat.title)}
-          />
-        )) : (
+      <main
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '1.5rem',
+          marginTop: '1rem',
+          width: '100%',
+          boxSizing: 'border-box',
+          alignItems: 'start',
+        }}
+      >
+        {filteredLinksData.length > 0 ? (
+          filteredLinksData.map(cat => (
+            <CategorySection
+              key={cat.title}
+              title={cat.title}
+              links={cat.links}
+              isOpen={openCategories.has(cat.title)}
+              onToggle={() => toggleCategoryOpen(cat.title)}
+            />
+          ))
+        ) : (
           <p style={{ gridColumn: '1/-1', textAlign: 'center', color: '#d9b382' }}>
             Nenašel se žádný odkaz odpovídající hledání.
           </p>
