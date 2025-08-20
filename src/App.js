@@ -209,7 +209,7 @@ function App() {
         { url: "https://www.nintendo.com/us/", title: "Nintendo", faviconUrl: "/Dashboard/icons/nintendo.png" },
         { url: "https://www.bungie.net/7/", title: "Bungie", faviconUrl: "/Dashboard/icons/bungie.png" },
         { url: "https://store.steampowered.com/", title: "Steam", faviconUrl: "/Dashboard/icons/steam.png" },
-        { url: "https://floor796.com/#t2l4,59,946", title: "Flor796", faviconUrl: "/Dashboard/icons/floor796.png.png" },
+        { url: "https://floor796.com/#t2l4,59,946", title: "Flor796", faviconUrl: "/Dashboard/icons/floor796.png" },
         { url: "https://eu.shop.battle.net/en-us#optLogin=true", title: "Blizzard" , faviconUrl: "/Dashboard/icons/battlenet.png"},
         { url: "https://store.epicgames.com/en-US/", title: "Epic", faviconUrl: "/Dashboard/icons/epic.png" },
         { url: "https://www.gog.com/en/", title: "GoG", faviconUrl: "/Dashboard/icons/gog.jpeg" },
