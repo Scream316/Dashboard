@@ -190,7 +190,7 @@ function App() {
     {
       title: "Kancelář",
       links: [
-        { url: "https://gmail.com", title: "Gmail", faviconUrl: "/Dashboards/icons/gmail.png" },
+        { url: "https://gmail.com", title: "Gmail", faviconUrl: "/Dashboard/icons/gmail.png" },
         { url: "https://calendar.google.com", title: "Google Kalendář", faviconUrl: "/Dashboard/icons/calendar.png" },
         { url: "https://email.faster.cz/", title: "Faster email", faviconUrl: "/Dashboard/icons/fastermail.png" },
         { url: "https://mail.proton.me/u/0/inbox?welcome=true", title: "Proton email", faviconUrl: "/Dashboard/icons/protonmail.jpeg" }, // lokální ikona
@@ -215,7 +215,7 @@ function App() {
         { url: "https://www.gog.com/en/", title: "GoG", faviconUrl: "/Dashboard/icons/gog.jpeg" },
         { url: "https://discord.com/channels/@me", title: "Discord", faviconUrl: "/Dashboard/icons/discord.png" },
         { url: "https://www.riotgames.com/en", title: "Riot", faviconUrl: "/Dashboard/icons/riot.png" },
-        { url: "https://docs.google.com/spreadsheets/d/1iU4dVup75JY8997a-LNJ2J-xOkXG7dTn5qDCDBt9mZw/edit?gid=0#gid=0", title: "Seznam her" },
+        { url: "https://docs.google.com/spreadsheets/d/1iU4dVup75JY8997a-LNJ2J-xOkXG7dTn5qDCDBt9mZw/edit?gid=0#gid=0", title: "Seznam her", faviconUrl: "/Dashboard/icons/tabulky.png" },
         { url: "https://www.twitch.tv/?no-reload=true", title: "Twitch", faviconUrl: "/Dashboard/icons/twitch.png" },
         { url: "https://www.ubisoft.com/en-us", title: "Ubisoft", faviconUrl: "/Dashboard/icons/ubisoft.png" },
         { url: "https://www.xbox.com/cs-CZ", title: "Xbox", faviconUrl: "/Dashboard/icons/xbox.png" },
@@ -225,7 +225,7 @@ function App() {
     {
       title: "Knihy",
       links: [
-        { url: "https://www.knihydobrovsky.cz/", title: "Dobrovský" },
+        { url: "https://www.knihydobrovsky.cz/", title: "Dobrovský", faviconUrl: "/Dashboard/icons/dobrovsky.png" },
         { url: "https://knihobot.cz/", title: "Knihobot", faviconUrl: "/Dashboard/icons/knihobot.png" },
         { url: "https://www.goodreads.com/", title: "Goodreads", faviconUrl: "/Dashboard/icons/goodreads.png" },
         { url: "https://www.databazeknih.cz/", title: "Databáze knih", faviconUrl: "/Dashboard/icons/databazeknih.png" },
@@ -239,14 +239,14 @@ function App() {
       links: [
         { url: "https://login.kb.cz/login?sso=IB_RETAIL_OAUTH_PRXY&layout=BRAND", title: "Komerční banka", faviconUrl: "/Dashboard/icons/kb.png" },
         { url: "https://bezpecnost.csas.cz/wlogin/?app_id=GEORGE", title: "Česká spořitelna", faviconUrl: "/Dashboard/icons/csas.png" },
-        { url: "https://ib.airbank.cz/", title: "Air bank", faviconUrl: "/icons/airbank.png" },
-        { url: "https://docs.google.com/spreadsheets/d/1WeVX_QK7r1vaIrkpn0gwQgIMYH5P5xUvr0r1WnsZk-g/edit?gid=256684917#gid=256684917", title: "Splátky k úhradě" },
+        { url: "https://ib.airbank.cz/", title: "Air bank", faviconUrl: "/Dashboard/icons/airbank.png" },
+        { url: "https://docs.google.com/spreadsheets/d/1WeVX_QK7r1vaIrkpn0gwQgIMYH5P5xUvr0r1WnsZk-g/edit?gid=256684917#gid=256684917", title: "Splátky k úhradě", faviconUrl: "/Dashboard/icons/tabulky.png" },
         { url: "https://adisspr.mfcr.cz/pmd/home/prihlaseni-do-dis", title: "Moje daně", faviconUrl: "/Dashboard/icons/mojedane.png" },
         { url: "https://obcan.portal.gov.cz/prihlaseni", title: "Portál občana", faviconUrl: "/Dashboard/icons/portalobcana.png" },
         { url: "https://moje.allianz.cz/online-moa/cs/login/auth", title: "Moje Alianz", faviconUrl: "/Dashboard/icons/allianz.png" },
         { url: "http://192.168.31.194:8093/login", title: "Firefly III", faviconUrl: "/Dashboard/icons/firefly.jpeg" },
         { url: "http://192.168.31.192:8080/dashboard", title: "Invoice Ninja", faviconUrl: "/Dashboard/icons/invoiceninja.png" },
-        { url: "https://docs.google.com/spreadsheets/d/1qAnssfHsxB1HHpp-lnZtq73sGAO6AklBCZHHBW5S7ZI/edit?gid=0#gid=0", title: "Splátka notebook" },
+        { url: "https://docs.google.com/spreadsheets/d/1qAnssfHsxB1HHpp-lnZtq73sGAO6AklBCZHHBW5S7ZI/edit?gid=0#gid=0", title: "Splátka notebook", faviconUrl: "/Dashboard/icons/tabulky.png" },
       ],
     },
     {
@@ -277,16 +277,16 @@ function App() {
         { url: "https://www.disneyplus.com/cs-cz/select-profile", title: "Disney+", faviconUrl: "/Dashboard/icons/disney.png" },
         { url: "https://www.oneplay.cz/", title: "Oneplay", faviconUrl: "/Dashboard/icons/oneplay.jpeg"},
         { url: "https://myanimelist.net/", title: "My Anime list", faviconUrl: "/Dashboard/icons/mal.png" },
-        { url: "https://www.imdb.com/", title: "Imdb", faviconUrl: "/Dashboard/icons/imdb.png" },
+        { url: "https://www.imdb.com/", title: "Imdb", faviconUrl: "/Dashboard/icons/imdb.jpeg" },
       ],
     },
     {
       title: "Tvorba",
       links: [
-        { url: "https://www.figma.com/files/team/927309606831785081/recents-and-sharing?fuid=927309597157056889", title: "Figma", faviconUrl: "/Dashboard/icons/figma.png" },
+        { url: "https://www.figma.com/files/team/927309606831785081/recents-and-sharing?fuid=927309597157056889", title: "Figma", faviconUrl: "/Dashboard/icons/figma.jpeg" },
         { url: "https://www.photopea.com/", title: "Photopea", faviconUrl: "/Dashboard/icons/photophea.png" },
         { url: "https://projects.raspberrypi.org/en", title: "Raspberry projekty", faviconUrl: "/Dashboard/icons/raspberry.png" },
-        { url: "https://screely.com/", title: "Screely", faviconUrl: "/Dashboard/icons/screely.png" },
+        { url: "https://screely.com/", title: "Screely", faviconUrl: "/Dashboard/icons/screely.jpeg" },
         { url: "https://scribehow.com/", title: "Scribe", faviconUrl: "/Dashboard/icons/scribe.png" },
         { url: "https://www.canva.com/", title: "Canva", faviconUrl: "/Dashboard/icons/canva.png" },
       ],
