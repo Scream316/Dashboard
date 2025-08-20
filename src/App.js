@@ -247,7 +247,9 @@ function App() {
         { url: "http://192.168.31.194:8093/login", title: "Firefly III", faviconUrl: "/Dashboard/icons/firefly.jpeg" },
         { url: "http://192.168.31.192:8080/dashboard", title: "Invoice Ninja", faviconUrl: "/Dashboard/icons/invoiceninja.png" },
         { url: "https://docs.google.com/spreadsheets/d/1qAnssfHsxB1HHpp-lnZtq73sGAO6AklBCZHHBW5S7ZI/edit?gid=0#gid=0", title: "Splátka notebook", faviconUrl: "/Dashboard/icons/tabulky.png" },
-      ],
+        { url: "https://moje.o2.cz/customer/1940788545", title: "Moje O2", faviconUrl: "/Dashboard/icons/o2.png" },
+        { url: "https://energie24.eon.cz/e24/", title: "Energie 24", faviconUrl: "/Dashboard/icons/e24.png" },
+      ]
     },
     {
       title: "Nákupy",
