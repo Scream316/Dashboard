@@ -314,7 +314,7 @@ function App() {
         { url: "https://eshop.compos.cz/default.asp", title: "Compos", faviconUrl: "/Dashboard/icons/compos.png" },
         { url: "https://www.rgshop.cz/", title: "RG Shop", faviconUrl: "/Dashboard/icons/rgshop.png" },
         { url: "https://www.klavesydoklavesnic.cz/", title: "Klávesy do klávesnic", faviconUrl: "/Dashboard/icons/klavesy.png" },
-        { url: "https://www.technimax.cz/", title: "Technimax", faviconUrl: "/Dashboard/icons/technimax.jpeg"},
+        { url: "https://www.technimax.cz/", title: "Technimax", faviconUrl: "/Dashboard/icons/technimax.png"},
         { url: "https://www.krup.cz/", title: "Krup Computer", faviconUrl: "/Dashboard/icons/krup.png" },
       ],
     },
