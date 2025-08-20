@@ -173,7 +173,7 @@ function CategorySection({ title, links, isOpen, onToggle }) {
 // Komponenta Hero obrázku
 function HeroImage({ src, alt, children }) {
   return (
-    <div style={{ width: '100%', height: 900, overflow: 'hidden', marginBottom: '1rem' }}>
+    <div style={{ width: '100%', height: 600, overflow: 'hidden', marginBottom: '1rem' }}>
       <img src={src} alt={alt} style={{ width: '100%', height: 'auto', objectFit: 'cover' }} />
       {children}
     </div>
