@@ -306,6 +306,18 @@ function App() {
         { url: "https://webutility.io/favicon-extractor", title: "Favicon", faviconUrl: "/Dashboard/icons/favicon.png" },
       ],
     },
+    {
+      title: "Náhradní díly",
+      links: [
+        { url: "https://www.dily-notebooky.cz/", title: "Díly NTB", faviconUrl: "/Dashboard/icons/ntb-servis.png" },
+        { url: "https://shop.sil.cz/", title: "Sil servis"},
+        { url: "https://eshop.compos.cz/default.asp", title: "Compos", faviconUrl: "/Dashboard/icons/compos.png" },
+        { url: "https://www.rgshop.cz/", title: "RG Shop", faviconUrl: "/Dashboard/icons/rgshop.png" },
+        { url: "https://www.klavesydoklavesnic.cz/", title: "Klávesy do klávesnic", faviconUrl: "/Dashboard/icons/klavesy.png" },
+        { url: "https://www.technimax.cz/", title: "Technimax", faviconUrl: "/Dashboard/icons/technimax.jpeg"},
+        { url: "https://www.krup.cz/", title: "Krup Computer", faviconUrl: "/Dashboard/icons/krup.png" },
+      ],
+    },
   ];
 
   // Filtrování dat podle searchTerm
