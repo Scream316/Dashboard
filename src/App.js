@@ -207,7 +207,7 @@ function App() {
         { url: "https://www.metacritic.com/", title: "Metacritic", faviconUrl: "/Dashboard/icons/metacritic.png" },
         { url: "https://store.playstation.com/en-cz/pages/latest", title: "Playstation", faviconUrl: "/Dashboard/icons/playstation.png" },
         { url: "https://www.nintendo.com/us/", title: "Nintendo", faviconUrl: "/Dashboard/icons/nintendo.png" },
-        { url: "https://www.bungie.net/7/", title: "Bungie", faviconUrl: "/Dashboard/icons/bungie.png.png" },
+        { url: "https://www.bungie.net/7/", title: "Bungie", faviconUrl: "/Dashboard/icons/bungie.png" },
         { url: "https://store.steampowered.com/", title: "Steam", faviconUrl: "/Dashboard/icons/steam.png" },
         { url: "https://floor796.com/#t2l4,59,946", title: "Flor796", faviconUrl: "/Dashboard/icons/floor796.png.png" },
         { url: "https://eu.shop.battle.net/en-us#optLogin=true", title: "Blizzard" , faviconUrl: "/Dashboard/icons/battlenet.png"},
