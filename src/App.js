@@ -304,6 +304,8 @@ function App() {
         { url: "https://www.credly.com/users/pavel-snabl/edit#credly", title: "Creedly", faviconUrl: "/Dashboard/icons/credly.png" },
         { url: "https://webshare.cz/#/search", title: "Webshare", faviconUrl: "/Dashboard/icons/webshare.png" },
         { url: "https://webutility.io/favicon-extractor", title: "Favicon", faviconUrl: "/Dashboard/icons/favicon.png" },
+        { url: "https://admin.webzdarma.cz/prihlaseni/?backlink=rv6mv", title: "Webzdarma", faviconUrl: "/Dashboard/icons/webzdarma.png" },
+        { url: "https://github.com/", title: "Github", faviconUrl: "/Dashboard/icons/github.png" },
       ],
     },
     {
