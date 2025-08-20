@@ -198,6 +198,7 @@ function App() {
         { url: "https://www.brnoid.cz/cs/", title: "BrnoID", faviconUrl: "/Dashboard/icons/brnoid.png" },
         { url: "https://pidlitacka.cz/cs/login", title: "Lítačka", faviconUrl: "/Dashboard/icons/litacka.png" },
         { url: "http://mojeid.cz/auction/password/", title: "MojeID", faviconUrl: "/Dashboard/icons/mojeid.png" },
+        { url: "https://www.zsmsvir.cz/", title: "ZŠ Vír", faviconUrl: "/Dashboard/icons/vir.jpeg" },
       ],
     },
     {
