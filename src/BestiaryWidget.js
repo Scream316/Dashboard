@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function BestiaryWidget() {
   const monsters = [
-    { name: 'Abaya', description: 'Vodní příšera podobná utopci, obývá močály a řeky. Je rychlá a útočí drápy.', weaknesses: 'Igni, Necrophage Oil, Quen', category: 'Necrophages', imageUrl: 'https://static.wikia.nocookie.net/witcher/images/7/7e/Tw3_abaya.jpg' },
+    { name: 'Abaya', description: 'Vodní příšera podobná utopci, obývá močály a řeky. Je rychlá a útočí drápy.', weaknesses: 'Igni, Necrophage Oil, Quen', category: 'Necrophages', imageUrl: 'https://static.wikia.nocookie.net/witcher/images/7/70/Tw3_abaya.jpg' },
     { name: 'Alghoul', description: 'Silnější varianta ghúla, větší a agresivnější, často vůdce smečky.', weaknesses: 'Necrophage Oil, Axii, Quen', category: 'Necrophages', imageUrl: 'https://static.wikia.nocookie.net/witcher/images/2/24/Tw3_alghoul.jpg' },
     { name: 'Allgod', description: 'Tajuplné stvoření uctívané jako bůh, manipuluje myslí obětí.', weaknesses: 'Igni, Relict Oil, Quen', category: 'Relicts', imageUrl: 'https://static.wikia.nocookie.net/witcher/images/8/8f/Tw3_allgod.jpg' },
     { name: 'Alp', description: 'Ženský upír, rychlý a smrtelný, útočí drápy a křikem.', weaknesses: 'Vampire Oil, Black Blood, Igni', category: 'Vampires', imageUrl: 'https://static.wikia.nocookie.net/witcher/images/5/5d/Tw3_alp.jpg' },
@@ -142,14 +142,6 @@ function BestiaryWidget() {
     : monsters.filter(monster => monster.category === selectedCategory);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * filteredMonsters.length);
-      setCurrentMonster(filteredMonsters[randomIndex]);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [selectedCategory]);
-
-  useEffect(() => {
     localStorage.setItem('favoriteMonsters', JSON.stringify(favorites));
   }, [favorites]);
 
@@ -199,19 +191,17 @@ function BestiaryWidget() {
           <option key={category} value={category}>{category}</option>
         ))}
       </select>
-      {currentMonster.imageUrl && (
-        <img
-          src={currentMonster.imageUrl}
-          alt={`${currentMonster.name} image`}
-          style={{
-            width: '100%',
-            maxHeight: '150px',
-            objectFit: 'contain',
-            borderRadius: '4px',
-            marginBottom: '0.5rem',
-          }}
-        />
-      )}
+      <img
+        src={currentMonster.imageUrl || 'https://via.placeholder.com/150?text=No+Image'}
+        alt={`${currentMonster.name} image`}
+        style={{
+          width: '100%',
+          maxHeight: '150px',
+          objectFit: 'contain',
+          borderRadius: '4px',
+          marginBottom: '0.5rem',
+        }}
+      />
       <h3 style={{ margin: '0.5rem 0', fontSize: '1.2rem', color: '#e0d8c3' }}>{currentMonster.name}</h3>
       <p style={{ margin: '0.5rem 0', fontSize: '1rem', color: '#e0d8c3', lineHeight: '1.4' }}>
         {currentMonster.description}
