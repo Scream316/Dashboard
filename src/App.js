@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BestiaryWidget from './BestiaryWidget';
 
 // Komponenta Clock – hodiny a datum
 function Clock() {
@@ -387,6 +388,7 @@ function App() {
           alignItems: 'start',
         }}
       >
+        <BestiaryWidget />
         {filteredLinksData.length > 0 ? (
           filteredLinksData.map(cat => (
             <CategorySection
