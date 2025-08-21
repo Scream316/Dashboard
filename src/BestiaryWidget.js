@@ -288,9 +288,7 @@ function BestiaryWidget() {
           </ul>
         </div>
       )}
-      <p style={{ marginTop: '1rem', fontSize: '0.8rem', color: '#e0d8c3', textAlign: 'center' }}>
-        Obrázky příšer: <a href="https://witcher.fandom.com" style={{ color: '#d4a017' }}>Witcher Wiki</a>
-      </p>
+     
     </div>
   );
 }
