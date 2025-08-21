@@ -374,7 +374,20 @@ function App() {
     >
       <HeroImage src={`${process.env.PUBLIC_URL}/images/hero.jpg`} alt="Hero Image">
         <Clock />
-        <BestiaryWidget />
+        <div
+          style={{
+            position: 'absolute',
+            top: 10,
+            left: 22,
+            zIndex: 10,
+            width: '300px', // Menší šířka pro hero image
+            backgroundColor: 'rgba(0, 0, 0, 0.3)', // Poloprůhledné pozadí jako u hodin
+            borderRadius: '8px',
+            padding: '0.5rem',
+          }}
+        >
+          <BestiaryWidget />
+        </div>
       </HeroImage>
 
       <main
