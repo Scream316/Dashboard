@@ -374,6 +374,7 @@ function App() {
     >
       <HeroImage src={`${process.env.PUBLIC_URL}/images/hero.jpg`} alt="Hero Image">
         <Clock />
+        <BestiaryWidget />
       </HeroImage>
 
       <main
@@ -388,7 +389,7 @@ function App() {
           alignItems: 'start',
         }}
       >
-        <BestiaryWidget />
+
         {filteredLinksData.length > 0 ? (
           filteredLinksData.map(cat => (
             <CategorySection
