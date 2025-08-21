@@ -5,24 +5,27 @@ const BestiaryWidget = () => {
     {
       name: 'Griffin',
       description: 'Okřídlená bestie s tělem lva a hlavou orla. Loví z výšky a útočí drápy.',
-      weakness: 'Použij Aard na sražení z nebe a stříbrný meč s olejem proti hybridům.',
+      weaknesses: 'Použij Aard na sražení z nebe a stříbrný meč s olejem proti hybridům.',
     },
     {
       name: 'Leshen',
       description: 'Lesní duch, který ovládá kořeny a vlky. Chrání svůj totem.',
-      weakness: 'Spal totem ohněm (Igni) a použij stříbrný meč s olejem proti reliktům.',
+      weaknesses: 'Spal totem ohněm (Igni) a použij stříbrný meč s olejem proti reliktům.',
     },
     {
       name: 'Drowner',
       description: 'Vodní stvoření, která útočí ve skupinách poblíž řek a jezer.',
-      weakness: 'Ignoru, pokud jsou slabí, nebo použij Igni a rychlé útoky.',
+      weaknesses: 'Ignoru, pokud jsou slabí, nebo použij Igni a rychlé útoky.',
     },
     {
       name: 'Wyvern',
       description: 'Drak s jedovatým ocasem, rychlý a agresivní v otevřeném prostranství.',
-      weakness: 'Použij Quen pro ochranu a stříbrný meč s olejem proti drakonidům.',
+      weaknesses: 'Použij Quen pro ochranu a stříbrný meč s olejem proti drakonidům.',
     },
-    { name: 'Abaya', description: 'Vodní příšera podobná utopci, obývá močály a řeky. Je rychlá a útočí drápy.', weaknesses: 'Igni, Necrophage Oil, Quen' },
+    { name: 'Abaya', 
+      description: 'Vodní příšera podobná utopci, obývá močály a řeky. Je rychlá a útočí drápy.', 
+      weaknesseses: 'Igni, Necrophage Oil, Quen' 
+    },
     { name: 'Alghoul', description: 'Silnější varianta ghúla, větší a agresivnější, často vůdce smečky.', weaknesses: 'Necrophage Oil, Axii, Quen' },
     { name: 'Allgod', description: 'Tajuplné stvoření uctívané jako bůh, manipuluje myslí obětí.', weaknesses: 'Igni, Relict Oil, Quen' },
     { name: 'Alp', description: 'Ženský upír, rychlý a smrtelný, útočí drápy a křikem.', weaknesses: 'Vampire Oil, Black Blood, Igni' },
@@ -212,7 +215,7 @@ const BestiaryWidget = () => {
             lineHeight: '1.4',
           }}
         >
-          <strong>Slabina:</strong> {currentMonster.weakness}
+          <strong>Slabina:</strong> {currentMonster.weaknesses}
         </p>
         <button
           onClick={getNewMonster}
