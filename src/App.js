@@ -387,7 +387,7 @@ function App() {
             padding: '0.5rem',
           }}
         >
-          <BestiaryWidget />
+          <WeatherWidget />
           <BestiaryWidget />
         </div>
       </HeroImage>
