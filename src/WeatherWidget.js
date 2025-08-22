@@ -49,7 +49,7 @@ function WeatherWidget() {
 
   return (
     <div style={widgetStyle}>
-      <h2 style={titleStyle}>Počasí v Praze ☀️</h2>
+      <h2 style={titleStyle}>Počasí v Brně ☀️</h2>
       <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
         <style>
           {`
