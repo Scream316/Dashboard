@@ -6,8 +6,8 @@ function WeatherWidget() {
   const [error, setError] = useState(null);
 
   // Koordináty pro Prahu (můžeš změnit podle potřeby)
-  const latitude = 50.0755;
-  const longitude = 14.4378;
+  const latitude = 	49.19205060;
+  const longitude = 16.61319090;
 
   useEffect(() => {
     const fetchWeather = async () => {
