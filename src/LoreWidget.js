@@ -142,16 +142,21 @@ const loreData = [
 function LoreWidget() {
   const [currentLore, setCurrentLore] = useState(null);
 
-  const selectLore = () => {
+  const selectDailyLore = () => {
     const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
     const seed = today.split('-').reduce((acc, val) => acc + parseInt(val), 0);
     const index = seed % loreData.length; // Deterministický výběr podle data
     setCurrentLore(loreData[index]);
   };
 
+  const selectRandomLore = () => {
+    const randomIndex = Math.floor(Math.random() * loreData.length); // Náhodný výběr
+    setCurrentLore(loreData[randomIndex]);
+  };
+
   useEffect(() => {
-    selectLore();
-    const interval = setInterval(selectLore, 24 * 60 * 60 * 1000); // Každý den
+    selectDailyLore(); // Inicializace denním příběhem
+    const interval = setInterval(selectDailyLore, 24 * 60 * 60 * 1000); // Každý den
     return () => clearInterval(interval);
   }, []);
 
@@ -166,7 +171,7 @@ function LoreWidget() {
   return (
     <div style={widgetStyle}>
       <h2 style={titleStyle}>Zaklínačský příběh 📜</h2>
-      <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
+      <div key={currentLore.title} style={{ animation: 'fadeIn 0.5s ease-out' }}>
         <style>
           {`
             @keyframes fadeIn {
@@ -178,7 +183,7 @@ function LoreWidget() {
         <p style={textStyle}><strong>{currentLore.title}</strong></p>
         <p style={textStyle}>{currentLore.description}</p>
         <button
-          onClick={selectLore}
+          onClick={selectRandomLore}
           style={buttonStyle}
           onMouseEnter={(e) => (e.target.style.backgroundColor = '#a11212')}
           onMouseLeave={(e) => (e.target.style.backgroundColor = '#8b0000')}
