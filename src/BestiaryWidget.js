@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function BestiaryWidget() {
   const monsters = [
-    { name: 'Abaya', description: 'Vodní příšera podobná utopci, obývá močály a řeky. Je rychlá a útočí drápy.', weaknesses: 'Igni, Necrophage Oil, Quen', category: 'Necrophages', imageUrl: 'https://static.wikia.nocookie.net/witcher/images/7/70/Tw3_abaya.jpg' },
+    { name: 'Abaya', description: 'Vodní příšera podobná utopci, obývá močály a řeky. Je rychlá a útočí drápy.', weaknesses: 'Igni, Necrophage Oil, Quen', category: 'Necrophages', imageUrl: 'https://witcher.fandom.com/wiki/Abaya?file=Tw3+journal+abaya.png' },
     { name: 'Alghoul', description: 'Silnější varianta ghúla, větší a agresivnější, často vůdce smečky.', weaknesses: 'Necrophage Oil, Axii, Quen', category: 'Necrophages', imageUrl: 'https://static.wikia.nocookie.net/witcher/images/2/24/Tw3_alghoul.jpg' },
     { name: 'Allgod', description: 'Tajuplné stvoření uctívané jako bůh, manipuluje myslí obětí.', weaknesses: 'Igni, Relict Oil, Quen', category: 'Relicts', imageUrl: 'https://static.wikia.nocookie.net/witcher/images/8/8f/Tw3_allgod.jpg' },
     { name: 'Alp', description: 'Ženský upír, rychlý a smrtelný, útočí drápy a křikem.', weaknesses: 'Vampire Oil, Black Blood, Igni', category: 'Vampires', imageUrl: 'https://static.wikia.nocookie.net/witcher/images/5/5d/Tw3_alp.jpg' },
