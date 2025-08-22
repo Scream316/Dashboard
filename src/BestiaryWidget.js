@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 function BestiaryWidget() {
   const monsters = [
@@ -79,7 +78,7 @@ function BestiaryWidget() {
     { name: 'Mad Kiyan', description: 'Prokletý zaklínač proměněný v monstrum.', weaknesses: 'Cursed Oil, Quen, Igni', category: 'Cursed Ones' },
     { name: 'Melusine', description: 'Siréna s mocným hlasem, útočí ze vzduchu.', weaknesses: 'Hybrid Oil, Aard, Grapeshot', category: 'Hybrids' },
     { name: 'Moreau’s Golem', description: 'Unikátní golem vytvořený magií, velmi odolný.', weaknesses: 'Elementa Oil, Dimeritium Bomb, Quen', category: 'Elementa' },
-    { name: 'Morkvarg', description: 'Prokletý vlkodlak, který se regeneruje.', weaknesses: 'Cursed Oil, Igni, Quen', category: 'Cursed Ones' },
+    { name: 'Morkvarg', description: 'Prokletý vlkodlak, který se regeneruje.', weaknesses: 'Cursed Oil, Moon Dust, Igni', category: 'Cursed Ones' },
     { name: 'Morvudd', description: 'Fiend s hypnotickými schopnostmi, velmi silný.', weaknesses: 'Relict Oil, Samum Bomb, Quen', category: 'Relicts' },
     { name: 'Mourntart', description: 'Grave hag, která požírá mrtvé, útočí jazykem.', weaknesses: 'Necrophage Oil, Yrden, Quen', category: 'Necrophages' },
     { name: 'Nekker', description: 'Malý tvor podobný skřetovi, útočí v rojích.', weaknesses: 'Ogroid Oil, Northern Wind, Igni', category: 'Ogroids' },
@@ -137,6 +136,7 @@ function BestiaryWidget() {
     const saved = localStorage.getItem('favoriteMonsters');
     return saved ? JSON.parse(saved) : [];
   });
+  const [animationKey, setAnimationKey] = useState(0);
 
   const filteredMonsters = selectedCategory === 'Vše'
     ? monsters
@@ -154,6 +154,12 @@ function BestiaryWidget() {
 
   const removeFromFavorites = (name) => {
     setFavorites(favorites.filter(fav => fav.name !== name));
+  };
+
+  const handleNewMonster = () => {
+    const randomIndex = Math.floor(Math.random() * filteredMonsters.length);
+    setCurrentMonster(filteredMonsters[randomIndex]);
+    setAnimationKey(prev => prev + 1); // Trigger CSS animation
   };
 
   return (
@@ -192,13 +198,26 @@ function BestiaryWidget() {
           <option key={category} value={category}>{category}</option>
         ))}
       </select>
-      <motion.div
-        key={currentMonster.name}
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -100 }}
-        transition={{ duration: 0.5 }}
+      <div
+        key={animationKey}
+        style={{
+          animation: 'slideIn 0.5s ease-out',
+        }}
       >
+        <style>
+          {`
+            @keyframes slideIn {
+              from {
+                opacity: 0;
+                transform: translateX(100px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+          `}
+        </style>
         <img
           src={`https://via.placeholder.com/150?text=${currentMonster.name.replace(/ /g, '+')}`}
           alt={`${currentMonster.name} image`}
@@ -217,13 +236,10 @@ function BestiaryWidget() {
         <p style={{ margin: '0.5rem 0 1rem', fontSize: '1rem', color: '#e0d8c3', fontStyle: 'italic' }}>
           <strong>Slabiny:</strong> {currentMonster.weaknesses}
         </p>
-      </motion.div>
+      </div>
       <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
         <button
-          onClick={() => {
-            const randomIndex = Math.floor(Math.random() * filteredMonsters.length);
-            setCurrentMonster(filteredMonsters[randomIndex]);
-          }}
+          onClick={handleNewMonster}
           style={{
             backgroundColor: '#8b0000',
             color: '#e0d8c3',
