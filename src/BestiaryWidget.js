@@ -218,17 +218,7 @@ function BestiaryWidget() {
             }
           `}
         </style>
-        <img
-          src={`https://via.placeholder.com/150?text=${currentMonster.name.replace(/ /g, '+')}`}
-          alt={`${currentMonster.name} image`}
-          style={{
-            width: '100%',
-            maxHeight: '150px',
-            objectFit: 'contain',
-            borderRadius: '4px',
-            marginBottom: '0.5rem',
-          }}
-        />
+        
         <h3 style={{ margin: '0.5rem 0', fontSize: '1.2rem', color: '#e0d8c3' }}>{currentMonster.name}</h3>
         <p style={{ margin: '0.5rem 0', fontSize: '1rem', color: '#e0d8c3', lineHeight: '1.4' }}>
           {currentMonster.description}
@@ -313,7 +303,7 @@ function BestiaryWidget() {
           </ul>
         </div>
       )}
-      
+
     </div>
   );
 }
