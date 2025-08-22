@@ -191,17 +191,7 @@ function BestiaryWidget() {
           <option key={category} value={category}>{category}</option>
         ))}
       </select>
-      <img
-        src={currentMonster.imageUrl || 'https://via.placeholder.com/150?text=No+Image'}
-        alt={`${currentMonster.name} image`}
-        style={{
-          width: '100%',
-          maxHeight: '150px',
-          objectFit: 'contain',
-          borderRadius: '4px',
-          marginBottom: '0.5rem',
-        }}
-      />
+      
       <h3 style={{ margin: '0.5rem 0', fontSize: '1.2rem', color: '#e0d8c3' }}>{currentMonster.name}</h3>
       <p style={{ margin: '0.5rem 0', fontSize: '1rem', color: '#e0d8c3', lineHeight: '1.4' }}>
         {currentMonster.description}
