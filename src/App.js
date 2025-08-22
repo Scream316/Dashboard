@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BestiaryWidget from './BestiaryWidget';
 import WeatherWidget from './WeatherWidget';
+import LoreWidget from './LoreWidget';
 import './App.css';
 
 // Komponenta Clock – hodiny a datum
@@ -390,6 +391,7 @@ function App() {
         >
           <WeatherWidget />
           <BestiaryWidget />
+          <LoreWidget />
         </div>
       </HeroImage>
 
