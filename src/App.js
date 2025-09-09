@@ -311,6 +311,8 @@ function App() {
         { url: "https://webutility.io/favicon-extractor", title: "Favicon", faviconUrl: "/Dashboard/icons/favicon.png" },
         { url: "https://admin.webzdarma.cz/prihlaseni/?backlink=rv6mv", title: "Webzdarma", faviconUrl: "/Dashboard/icons/webzdarma.png" },
         { url: "https://github.com/", title: "Github", faviconUrl: "/Dashboard/icons/github.png" },
+        { url: "https://sktorrent.eu/torrent/", title: "CzTorrent", faviconUrl: "/Dashboard/icons/cztorrent.png" },
+        { url: "https://www.reddit.com/r/Piracy/wiki/megathread/#wiki_.1F3A6_movies_.26amp.3B_tv", title: "Piracy Guide", faviconUrl: "/Dashboard/icons/piracyguide.png" },
       ],
     },
     {
