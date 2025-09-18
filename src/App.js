@@ -285,6 +285,7 @@ function App() {
         { url: "https://www.oneplay.cz/", title: "Oneplay", faviconUrl: "/Dashboard/icons/oneplay.jpeg"},
         { url: "https://myanimelist.net/", title: "My Anime list", faviconUrl: "/Dashboard/icons/mal.png" },
         { url: "https://www.imdb.com/", title: "Imdb", faviconUrl: "/Dashboard/icons/imdb.jpeg" },
+        { url: "http://95.129.96.148:8096/web/#/home.html", title: "Jellyfin", faviconUrl: "/Dashboard/icons/jellyfin.png" },
       ],
     },
     {
@@ -313,6 +314,7 @@ function App() {
         { url: "https://github.com/", title: "Github", faviconUrl: "/Dashboard/icons/github.png" },
         { url: "https://sktorrent.eu/torrent/", title: "CzTorrent", faviconUrl: "/Dashboard/icons/cztorrent.png" },
         { url: "https://www.reddit.com/r/Piracy/wiki/megathread/#wiki_.1F3A6_movies_.26amp.3B_tv", title: "Piracy Guide", faviconUrl: "/Dashboard/icons/piracyguide.png" },
+        { url: "https://jellyfine.synology.me:6751/", title: "NAS", faviconUrl: "/Dashboard/icons/synology.png" },
       ],
     },
     {
