@@ -225,7 +225,7 @@ function App() {
         { url: "https://www.ubisoft.com/en-us", title: "Ubisoft", faviconUrl: "/Dashboard/icons/ubisoft.png" },
         { url: "https://www.xbox.com/cs-CZ", title: "Xbox", faviconUrl: "/Dashboard/icons/xbox.png" },
         { url: "https://pocketpsn.com/Screamm316", title: "Pocket PSN", faviconUrl: "/Dashboard/icons/pocketpsn.png" },
-        { url: "https://www.fanatical.com/en/", title: "Fanatical", faviconUrl: "/Dashboard/icons/fanatical.png" },
+        { url: "https://www.fanatical.com/en/ ", title: "Fanatical", faviconUrl: "/Dashboard/icons/fanatical.png" },
       ],
     },
     {
