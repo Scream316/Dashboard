@@ -203,6 +203,7 @@ function App() {
         { url: "https://pidlitacka.cz/cs/login", title: "Lítačka", faviconUrl: "/Dashboard/icons/litacka.png" },
         { url: "http://mojeid.cz/auction/password/", title: "MojeID", faviconUrl: "/Dashboard/icons/mojeid.png" },
         { url: "https://www.zsmsvir.cz/", title: "ZŠ Vír", faviconUrl: "/Dashboard/icons/vir.jpeg" },
+        { url: "https://toolbrew.co/?utm_source=substack&utm_medium=email", title: "Online nástroje", faviconUrl: "/Dashboard/icons/onlinenastroje.png" },
       ],
     },
     {
@@ -226,6 +227,7 @@ function App() {
         { url: "https://www.xbox.com/cs-CZ", title: "Xbox", faviconUrl: "/Dashboard/icons/xbox.png" },
         { url: "https://pocketpsn.com/Screamm316", title: "Pocket PSN", faviconUrl: "/Dashboard/icons/pocketpsn.png" },
         { url: "https://www.fanatical.com/en/ ", title: "Fanatical", faviconUrl: "/Dashboard/icons/fanatical.png" },
+        { url: "https://raphamorim.io/gameboy/ ", title: "Gamoy Emulátor", faviconUrl: "/Dashboard/icons/gameboy.png" },
       ],
     },
     {
