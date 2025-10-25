@@ -240,6 +240,8 @@ function App() {
         { url: "https://katalog.kjm.cz/arl-kjm/cs/index/", title: "Mahenova knihovna", faviconUrl: "/Dashboard/icons/mahenka.png" },
         { url: "https://www.trhknih.cz/", title: "Trh knih", faviconUrl: "/Dashboard/icons/trhknih.png" },
         { url: "http://192.168.31.195:5000/login", title: "Kavita", faviconUrl: "/Dashboard/icons/kavita.png" },
+         { url: "http://192.168.31.195:5000/login", title: "Kindle", faviconUrl: "/Dashboard/icons/amazon.png" },
+          { url: "http://192.168.31.195:5000/login", title: "Z-library", faviconUrl: "/Dashboard/icons/zlibrary.png" },
       ],
     },
     {
