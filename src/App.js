@@ -196,7 +196,7 @@ function App() {
       links: [
         { url: "https://gmail.com", title: "Gmail", faviconUrl: "/Dashboard/icons/gmail.png" },
         { url: "https://calendar.google.com", title: "Google Kalendář", faviconUrl: "/Dashboard/icons/calendar.png" },
-        { url: "https://email.faster.cz/", title: "Faster email", faviconUrl: "/Dashboard/icons/fastermail.png" },
+        { url: "https://moof.faster.cz/", title: "Faster email", faviconUrl: "/Dashboard/icons/fastermail.png" },
         { url: "https://mail.proton.me/u/0/inbox?welcome=true", title: "Proton email", faviconUrl: "/Dashboard/icons/protonmail.jpeg" }, // lokální ikona
         { url: "https://drive.google.com/drive/my-drive", title: "Google disk", faviconUrl: "/Dashboard/icons/googledisk.png" },
         { url: "https://www.brnoid.cz/cs/", title: "BrnoID", faviconUrl: "/Dashboard/icons/brnoid.png" },
