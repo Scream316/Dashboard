@@ -400,8 +400,6 @@ function App() {
           }}
         >
           <WeatherWidget />
-          <BestiaryWidget />
-          <LoreWidget />
         </div>
       </HeroImage>
 
