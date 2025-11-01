@@ -228,6 +228,7 @@ function App() {
         { url: "https://pocketpsn.com/Screamm316", title: "Pocket PSN", faviconUrl: "/Dashboard/icons/pocketpsn.png" },
         { url: "https://www.fanatical.com/en/ ", title: "Fanatical", faviconUrl: "/Dashboard/icons/fanatical.png" },
         { url: "https://raphamorim.io/gameboy/ ", title: "Gamboy Emulátor", faviconUrl: "/Dashboard/icons/gameboy.png" },
+        { url: "https://play.geforcenow.com/mall/#/layout/games", title: "Geforce Now", faviconUrl: "/Dashboard/icons/geforcenow.png" },
       ],
     },
     {
