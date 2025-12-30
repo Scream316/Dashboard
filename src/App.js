@@ -322,6 +322,8 @@ function App() {
         { url: "https://sktorrent.eu/torrent/", title: "CzTorrent", faviconUrl: "/Dashboard/icons/cztorrent.png" },
         { url: "https://www.reddit.com/r/Piracy/wiki/megathread/#wiki_.1F3A6_movies_.26amp.3B_tv", title: "Piracy Guide", faviconUrl: "/Dashboard/icons/piracyguide.png" },
         { url: "https://jellyfine.synology.me:6751/", title: "NAS", faviconUrl: "/Dashboard/icons/synology.png" },
+        { url: "https://osintframework.com/", title: "OSINT", faviconUrl: "/Dashboard/icons/osint.png" },
+        { url: "https://www.exploit-db.com/", title: "Exploit database", faviconUrl: "/Dashboard/icons/exploit.png" },
       ],
     },
     {
