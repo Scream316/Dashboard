@@ -210,7 +210,7 @@ function App() {
       title: "Zábava",
       links: [
         { url: "https://www.youtube.com/", title: "Youtube", faviconUrl: "/Dashboard/icons/youtube.png" },
-        { url: "https://raphamorim.io/gameboy/ ", title: "Backlog", faviconUrl: "/Dashboard/icons/backlog.png" },
+        { url: "https://backloggd.com/", title: "Backlog", faviconUrl: "/Dashboard/icons/backlog.png" },
         { url: "https://www.metacritic.com/", title: "Metacritic", faviconUrl: "/Dashboard/icons/metacritic.png" },
         { url: "https://store.playstation.com/en-cz/pages/latest", title: "Playstation", faviconUrl: "/Dashboard/icons/playstation.png" },
         { url: "https://www.nintendo.com/us/", title: "Nintendo", faviconUrl: "/Dashboard/icons/nintendo.png" },
