@@ -324,7 +324,7 @@ function App() {
         { url: "https://jellyfine.synology.me:6751/", title: "NAS", faviconUrl: "/Dashboard/icons/synology.png" },
         { url: "https://osintframework.com/", title: "OSINT", faviconUrl: "/Dashboard/icons/osint.png" },
         { url: "https://www.exploit-db.com/", title: "Exploit database", faviconUrl: "/Dashboard/icons/exploit.png" },
-        { url: "https://www.munipolis.cz/moje-nastenka", title: "Munipolis", faviconUrl: "/Dashboard/icons/munipolis.png" }
+        { url: "https://www.munipolis.cz/moje-nastenka", title: "Munipolis", faviconUrl: "/Dashboard/icons/munipolis.jpeg" }
       ],
     },
     {
